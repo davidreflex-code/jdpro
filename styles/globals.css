@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-green: #8cc63f;
+  --c-magenta: #ec268f;
+  --c-red: #ed1c24;
+  --c-orange: #f7941d;
+  --c-cyan: #27aae1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: #050510;
+  color: #f0f0f5;
+}
+
+body {
+  font-family: var(--font-heebo), 'Heebo', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Pixel grid background overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(39, 170, 225, 0.025) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* LTR isolation for ltr-text elements like phones, emails, brand */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Color divider */
+.color-divider {
+  height: 3px;
+  background: linear-gradient(90deg, #8cc63f, #ec268f, #ed1c24, #f7941d, #27aae1);
+  border: none;
+}
+
+/* Logo treatment for dark backgrounds (CSS fallback) */
+.logo-on-dark {
+  filter: brightness(2)
+    drop-shadow(0 0 12px rgba(236, 38, 143, 0.2))
+    drop-shadow(0 0 12px rgba(39, 170, 225, 0.2));
+}
+
+.hero-logo-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-logo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(ellipse 60% 60% at 30% 50%, rgba(236, 38, 143, 0.18), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 70% 40%, rgba(39, 170, 225, 0.14), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 70%, rgba(140, 198, 63, 0.12), transparent 60%);
+  filter: blur(20px);
+  animation: logo-glow-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Hero gradient text */
+.hero-gradient-text {
+  background: linear-gradient(135deg, #ec268f, #f7941d, #27aae1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(15, 15, 35, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(240, 240, 245, 0.08);
+}
+
+/* RTL nav underline animation */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ec268f, #27aae1);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link[data-active='true']::after {
+  width: 100%;
+}
+
+/* Star rating LTR */
+.stars {
+  direction: ltr;
+  display: inline-flex;
+  gap: 2px;
+}
+
+/* Card hover glow using --glow CSS var set inline */
+.why-card,
+.service-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.why-card:hover {
+  border-color: var(--glow);
+  box-shadow: 0 0 30px -5px var(--glow);
+}
+.service-card:hover {
+  border-color: var(--glow);
+  box-shadow: 0 0 30px -5px var(--glow);
+  transform: translateY(-6px);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(236, 38, 143, 0.4);
+  color: #f0f0f5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ec268f, #27aae1);
+  border-radius: 6px;
+}
