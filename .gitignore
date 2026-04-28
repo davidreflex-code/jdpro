@@ -1,8 +1,11 @@
-node_modules
-.next
-out
-.env*.local
-.DS_Store
+# next.js
 *.tsbuildinfo
-next-env.d.ts
+.DS_Store
+.env*.local
+.firebase
+.next
 .vercel
+firebase-debug.log
+next-env.d.ts
+node_modules
+out
