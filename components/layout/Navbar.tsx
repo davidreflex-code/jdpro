@@ -37,7 +37,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8 h-16 lg:h-20">
         <Link href="/" className="ltr font-display font-black text-xl tracking-tight">
-          <span className="hero-gradient-text">JD PRO</span>
+          <span className="hero-gradient-text">{brand.name}</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">

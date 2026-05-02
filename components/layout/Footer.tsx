@@ -24,7 +24,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="ltr font-display font-black text-2xl mb-4 hero-gradient-text">
-            JD PRO
+            {brand.name}
           </div>
           <p className="text-white-dim text-[0.9rem] leading-relaxed mb-5">
             {brand.tagline}

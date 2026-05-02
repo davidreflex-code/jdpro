@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, ChevronDown } from 'lucide-react'
 import { LinkButton } from '@/components/ui/Button'
+import { brand } from '@/config/brand'
 
 export function Hero() {
   return (
@@ -33,7 +34,7 @@ export function Hero() {
           className="hero-logo-wrap mb-8 inline-block"
         >
           <span className="ltr font-display font-black text-5xl md:text-6xl tracking-tight hero-gradient-text">
-            JD PRO
+            {brand.name}
           </span>
         </motion.div>
 
